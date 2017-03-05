@@ -3,9 +3,9 @@
 	<head>
 		<title>CV Breysse Laura</title> 
 		<meta charset="UTF-8"/> <link rel="stylesheet" type="text/css" href="cv.css" >   
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
-	
-		<script type= "text/javascript" src="cv.js"></script>  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script language="javascript" type="text/javascript">   function afficher(id_div) {  $(id_div).toggle();   } </script>   <script language="javascript" type="text/javascript">        function verif(){   var email = $('#email').val();   var tel =$('#tel').val();      validmail(email);   validtel(tel);  }  function validmail(email){   var ad =/(^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,})$/;     if (email.includes("@") != true || ad.test(email)==false)    window.alert("Error ! mail incorrect");   }    function validtel(tel){   var t = /([^0-9]){1,}/;    if (tel.length!= '10' || t.test(tel))    window.alert("Error ! numero de telephone incorrect");     }       </script>		
+<script type= "text/javascript" src="cv.js"></script>  
 	</head>
 	<body>
 		<h1>-CV Breysse Laura-</h1> 
