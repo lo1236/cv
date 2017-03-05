@@ -2,92 +2,152 @@
 <html>
 	<head>
 		<title>CV Breysse Laura</title> 
-		<meta charset="UTF-8"> <link rel="stylesheet" type="text/css" href="cv.css" >   
-	</head> 
-	<body> 
-		<h1>-CV Breysse Laura-</h1>
-		<nav>    
-			<ul>
-				<li><a href="#Information">Informations Générales</a></li>
-				<li><a href="#Formation">Formations</a></li>
-				<li><a href="#Expérience">Expériences</a></li>
-				<li><a href="#Compétence">Compétences Complémentaires</a></li>
+		<meta charset="UTF-8"/> <link rel="stylesheet" type="text/css" href="cv.css" >   
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+		<script language="javascript" type="text/javascript">  
+			function afficher(id_div) {  
+				$(id_div).toggle();  
+			} 
+		</script> 
+		<script language="javascript" type="text/javascript">    
+			function verif(){ 
+				var email = $('#email').val();
+				var tel =$('#tel').val();   
+				validmail(email); 
+				validtel(tel);  
+			} 
+			function validmail(email){ 
+				var ad =/(^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,})$/;  
+				if (email.includes("@") != true || ad.test(email)==false)    
+					window.alert("Error ! mail incorrect");  
+			}  
+			function validtel(tel){  
+				var t = /([^0-9]){1,}/;  
+				if (tel.length!= '10' || t.test(tel))   
+					window.alert("Error ! numero de telephone incorrect");   
+			}    
+		</script>  
+		<script type= "text/javascript" src="cv.js"></script>  
+	</head>
+	<body>
+		<h1>-CV Breysse Laura-</h1> 
+		<nav>  
+			<ul>  
+				<li><a href="#Information">Informations Générales</a></li> 
+				<li><a href="#Formation">Formations</a></li> 
+				<li><a href="#Expérience">Expériences</a></li>  
+				<li><a href="#Compétence">Compétences Complémentaires</a></li>  
+				<li><a href="#Contact">Formulaire de contact</a></li>  
 			</ul>  
 		</nav>
-		<h3>-Informations Générales-</h3>
-		<div id="Information">
-			<p class="id">Laura Breysse 
-				<br>26 rue Paul Gauguin 69500 Bron
-				<br>0659363822 
-				<br>laura.breysse@etu.univ-lyon1.fr   </p>
-		</div>
-		<div id "Formation">
-			<h3>-Formations-</h3>
-			<table id="formations">
-				<tr>
-					<td class="periode">Actuellement: </td>
-					<td>       <p>Master II Competence Complementaire en Informatique
-						<br>Université Claude Bernard LYON 1
-						<br><a href="http://master-info.univ-lyon1.fr/CCI/" title="formation CCI">Informations complémentaires CCI</a>    
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<td class="periode">2015 - 16: </td>
-					<td>       <p>Master II Ecologie Evolution Biometrie
-						<br>Université Claude Bernard LYON 1
-						<br><a href="https://www.bee-lyon-univ.fr/" title="formation CCI">Informations complémentaires EEB</a> 
-						</p> 
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div id="Expérience">
-			<h3>-Expériences-</h3>
-			<div id="stage">
-				<h4>Stage</h4>
-				<table>
-					<tr>
-						<td class="periode">Janvier - Juin 2016:</td> 
-						<td>        <p> Rôle des capacités cognitives dans l’efficacité de l’exploitation de l’habitat        
-							<br>Université d’Aberdeen, Écosse 
-							<br>Tuteur: Dr. Pierre Bize
-							</p>
-						</td>
-					</tr>
-					<tr>
-						<td class="periode">Juin 2014: </td>
-						<td>        <p>Évolution des réseaux de gènes en environnement variable
-							<br>Laboratoire de Biometrie et Biologie Évolutive, équipe Évolution, Adaptation et Comportement        
-							<br>Université Claude Bernard LYON 1
-							<br>Tuteur: Dr. Étienne Rajon
-							</p> 
-						</td>
-					</tr>
-				</table>
+		<h3>-Informations Générales-  
+			<button style="font-size: 50%;" onclick="afficher('#Information');"> cacher </button>
+		</h3>  
+		<div id="Information">  
+			<p class="id">Laura Breysse   
+				<br>26 rue Paul Gauguin 69500 Bron   
+				<br>0659363822   
+				<br>laura.breysse@etu.univ-lyon1.fr   </p> 
+		</div> 
+		<h3>-Formations-
+			<button style="font-size: 50%;" onclick="afficher('#Formation');"> cacher </button>
+		</h3>
+		<div id="Formation">  
+			<table id="formations">   
+				 <tbody>   
+					 <tr>   
+						 <td class="periode">Actuellement: </td>   
+						 <td>       <p>Master II Compétence Complémentaire en Informatique     
+							 <br>Université Claude Bernard LYON 1   
+							 <br><a href="http://master-info.univ-lyon1.fr/CCI/" title="formation CCI">Informations complémentaires CCI</a>   
+							 </p>   
+						 </td>    
+					 </tr>     <tr>    
+					 <td class="periode">2015 - 16: </td>   
+					 <td>       <p>Master II Écologie Évolution Biométrie    
+						 <br>Université Claude Bernard LYON 1    
+						 <br><a href="https://www.bee-lyon-univ.fr/" title="formation EEB">Informations complémentaires EEB</a>  
+						 </p>     
+					 </td>    
+					 </tr>     
+				</tbody> 
+			</table>  
+		</div> 
+		<h3>-Expériences-  
+			<button style="font-size: 50%;" onclick="afficher('#Expérience');"> cacher </button>
+		</h3> 
+		<div id="Expérience">    
+			<div id="stage">  
+				<h4>Stage</h4>    
+				<table>  
+					<tr>       <td class="periode">Janvier - Juin 2016:</td> 
+						<td>        <p> Rôle des capacités cognitives dans l’efficacité de l’exploitation de l’habitat  
+							<br>Université d’Aberdeen, Écosse      
+							<br>Tuteur: Dr. Pierre Bize        
+							</p>     
+						</td>      </tr>    
+					<tr>    
+						<td class="periode">Juin 2014: </td>  
+						<td>        <p>Évolution des réseaux de gènes en environnement variable    
+							<br>Laboratoire de Biométrie et Biologie Évolutive, équipe Évolution, Adaptation et Comportement    
+							<br>Université Claude Bernard LYON 1     
+							<br>Tuteur: Dr. Étienne Rajon      
+							</p>      
+						</td>    
+					</tr>   
+				</table>   
 			</div>
-		</div>
-		<div id="Compétence"> 
-			<h3>-Compétences Complémentaires-</h3>
-			<div>
-				<table>
-					<tr><th>Langue:</th></tr> 
-					<tr>            
-						<td>Anglais: B2 TOEIC 2015 /C1 CEFR 2016 </td>
-					</tr> 
-				</table>
-			</div>
-			<div>
-				<table>
-					<tr><th>Logiciels: </th></tr>   
-					<tr> 
-						<td>Bureautique: Suite Office </td>
-					</tr> 
-					<tr>
-						<td>Traitement statistique: R</td> 
-					</tr>
+		</div>  
+		<h3>-Compétences Complémentaires-
+			<button style="font-size: 50%;" onclick="afficher('#Compétence');"> cacher </button> 
+		</h3>
+		<div id="Compétence">  
+			<div>   
+				<table>    <tr><th>Langue:</th>
+					</tr>    
+					<tr>            <td>Anglais: B2 TOEIC 2015 /C1 CEFR 2016 </td>   
+					</tr>   
+				</table> 
+			</div>   
+			<div>     
+				<table>  
+					<tr><th>Logiciels: </th>
+					</tr>  
+					<tr>      <td>Bureautique: Suite Office </td>
+					</tr>  
+					<tr>      <td>Traitement statistique: R</td>    
+					</tr>   
 				</table>  
-			</div>
-		</div>
+			</div> 
+		</div> 
+		<h3>-Formulaire de contact-
+			<button style="font-size: 50%;" onclick="afficher('#Contact');"> cacher </button>  
+		</h3>  
+		<div id= "Contact" >  
+			<form>    
+				<table>      
+					<tr>   
+					<td>Nom</td>  
+					<td><input type="text" id="nom"/></td>    
+					</tr>   
+					<tr>    
+						<td>Email</td>   
+						<td><input type="text" id="email"/></td> 
+					</tr>  
+					<tr>   
+						<td>Téléphone</td>  
+						<td><input type="text" id="tel"/></td>    
+					</tr>   
+					<tr>    
+						<td>Message</td>   
+						<td><textarea></textarea> </td>  
+					</tr>   
+					<tr>     
+						<td/>    
+						<td><input type="submit" id="send" onclick="verif();"/></td>  
+					</tr>  
+				</table>  
+			</form>  
+		</div>  
 	</body>
 </html>
